@@ -1,5 +1,7 @@
 {
   "name": "smthmovie",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "heroku-cli": "^6.12.4"
+  }
 }
