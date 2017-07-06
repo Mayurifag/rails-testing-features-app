@@ -10,10 +10,14 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
 
-gem 'devise'
-gem 'kinopoisk-parser'
+
+gem 'kinopoisk_parser', '~> 2.2.3'
 gem 'pg'
 gem 'bootstrap-sass'
+gem 'devise'
+gem 'devise-bootstrapped'
+gem 'devise-i18n'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
