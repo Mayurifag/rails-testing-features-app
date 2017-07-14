@@ -3,6 +3,7 @@ require 'kinopoisk_parser'
 namespace :kinopoisk do
   desc "Parse MoriCinemaToday database and export needed info to Movies"
   task :parse_mori => :environment do
+    #Movie.destroy_all                          
     titles = MoriCinemaToday.pluck(:title)
     titles.each{|p|
       movie = Kinopoisk::Movie.new "#{p}"
@@ -24,9 +25,8 @@ namespace :kinopoisk do
         genres: "#{movie.genres.join(", ").to_s}",
         poster_image_url: "#{movie.poster}"
         })
-        random = rand(3.0..11.0)
-        puts "Фильм #{movie.title} добавлен. Для обхода антипарсера \
-             кинопоиска будет добавлена случайная задержка, равная #{random}."
+        random = rand(15.2..32.1) #hello kinopoisk ._.
+        puts "Фильм '#{movie.title}' добавлен. Для обхода антипарсера кинопоиска будет добавлена случайная задержка, равная #{random.round 3} cекунд."
         sleep random
     }
   end
