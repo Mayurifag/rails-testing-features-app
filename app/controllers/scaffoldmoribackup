@@ -1,0 +1,74 @@
+class MoriCinemaTodaysController < ApplicationController
+  before_action :set_mori_cinema_today, only: [:show, :edit, :update, :destroy]
+
+  # GET /mori_cinema_todays
+  # GET /mori_cinema_todays.json
+  def index
+    @mori_cinema_todays = MoriCinemaToday.all
+  end
+
+  # GET /mori_cinema_todays/1
+  # GET /mori_cinema_todays/1.json
+  def show
+  end
+
+  # GET /mori_cinema_todays/new
+  def new
+    @mori_cinema_today = MoriCinemaToday.new
+  end
+
+  # GET /mori_cinema_todays/1/edit
+  def edit
+  end
+
+  # POST /mori_cinema_todays
+  # POST /mori_cinema_todays.json
+  def create
+    @mori_cinema_today = MoriCinemaToday.new(mori_cinema_today_params)
+
+    respond_to do |format|
+      if @mori_cinema_today.save
+        format.html { redirect_to @mori_cinema_today, notice: 'Mori cinema today was successfully created.' }
+        format.json { render :show, status: :created, location: @mori_cinema_today }
+      else
+        format.html { render :new }
+        format.json { render json: @mori_cinema_today.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /mori_cinema_todays/1
+  # PATCH/PUT /mori_cinema_todays/1.json
+  def update
+    respond_to do |format|
+      if @mori_cinema_today.update(mori_cinema_today_params)
+        format.html { redirect_to @mori_cinema_today, notice: 'Mori cinema today was successfully updated.' }
+        format.json { render :show, status: :ok, location: @mori_cinema_today }
+      else
+        format.html { render :edit }
+        format.json { render json: @mori_cinema_today.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /mori_cinema_todays/1
+  # DELETE /mori_cinema_todays/1.json
+  def destroy
+    @mori_cinema_today.destroy
+    respond_to do |format|
+      format.html { redirect_to mori_cinema_todays_url, notice: 'Mori cinema today was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_mori_cinema_today
+      @mori_cinema_today = MoriCinemaToday.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def mori_cinema_today_params
+      params.require(:mori_cinema_today).permit(:title, :two_d, :three_d)
+    end
+end

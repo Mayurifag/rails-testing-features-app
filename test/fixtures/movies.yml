@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  slogan: MyText
+  imdb_rating: 9.99
+  rating: 1.5
+  countries: MyString
+  budget: MyText
+  box_office_ru: MyText
+  premiere_world: 2017-07-06
+  premiere_ru: 2017-07-06
+  duration: MyString
+  description: MyText
+  directors: MyText
+  producers: MyText
+  composers: MyText
+  genres: MyText
+
+two:
+  title: MyString
+  slogan: MyText
+  imdb_rating: 9.99
+  rating: 1.5
+  countries: MyString
+  budget: MyText
+  box_office_ru: MyText
+  premiere_world: 2017-07-06
+  premiere_ru: 2017-07-06
+  duration: MyString
+  description: MyText
+  directors: MyText
+  producers: MyText
+  composers: MyText
+  genres: MyText

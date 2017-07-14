@@ -1,0 +1,59 @@
+require 'nokogiri'
+require 'open-uri'
+
+namespace :parse_cinema do
+  desc "Parse today's movie schedule from www.mori-cinema.ru in Syktyvkar \
+        and fill it in database"
+  task :mori_today => :environment do
+    url = "https://mori-cinema.ru/cinema_detail/4768_mori_sinema/schedule.php"
+    doc = Nokogiri::HTML(open(url))
+    movie_title = nil
+    three_d = nil
+    two_d = nil
+    titled = nil
+    MoriCinemaToday.destroy_all
+    doc.encoding = 'utf-8' # Названия фильмов на русском языке :(
+    schedule = doc.at_css('table tbody') # Переход к расписанию
+    schedule.css("tr.first").remove # Убрать «Фильм -	Форматы	- Сеансы»
+    #File.open('/tmp/mori-cinema.html', 'w') {|f| f.write schedule }
+    schedule.search('tr td').each{|f|
+      f = f.text.strip.gsub(/\t/, '').gsub(/[\r\n]/, ' ') #двойной gsub?!?
+      #мммммм куча условий, по цене гигантских ресурсов попробуй еще захочешь
+      puts "Обработка: #{f.inspect}"
+      if f == "3D"
+        three_d = true
+        next
+      end
+      if f == "2D"
+        two_d = true
+        next
+      end
+      if three_d == true
+        three_d_times = f
+        puts "three d: #{three_d_times}"
+        three_d = nil
+      end
+      if two_d == true
+        two_d_times = f
+        puts "two d: #{two_d_times}"
+        two_d = nil
+      end
+      if titled == nil
+        movie_title = f
+        puts "#{movie_title}"
+        titled = true
+        next
+      end
+      puts "====== that was #{movie_title}"
+      puts "two_d = #{two_d.inspect}"
+      puts "three_d = #{three_d.inspect}"
+      titled = nil
+      sleep 6
+    }
+  end
+end
+#MoriCinemaToday.create!({
+#    title: "#{movie_title}",
+#    two_d: "#{two_d_times}",
+#      three_d: "#{three_d_times}"
+#    })

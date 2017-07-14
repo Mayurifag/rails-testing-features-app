@@ -1,0 +1,97 @@
+<%= form_with(model: movie, local: true) do |form| %>
+  <% if movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :movie_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poster_image_url %>
+    <%= form.text_field :poster_image_url, id: :movie_poster_image_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slogan %>
+    <%= form.text_area :slogan, id: :movie_slogan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :imdb_rating %>
+    <%= form.text_field :imdb_rating, id: :movie_imdb_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.text_field :rating, id: :movie_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :countries %>
+    <%= form.text_field :countries, id: :movie_countries %>
+  </div>
+
+  <div class="field">
+    <%= form.label :budget %>
+    <%= form.text_area :budget, id: :movie_budget %>
+  </div>
+
+  <div class="field">
+    <%= form.label :box_office_ru %>
+    <%= form.text_area :box_office_ru, id: :movie_box_office_ru %>
+  </div>
+
+  <div class="field">
+    <%= form.label :premiere_world %>
+    <%= form.date_select :premiere_world, id: :movie_premiere_world %>
+  </div>
+
+  <div class="field">
+    <%= form.label :premiere_ru %>
+    <%= form.date_select :premiere_ru, id: :movie_premiere_ru %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duration %>
+    <%= form.text_field :duration, id: :movie_duration %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :movie_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :directors %>
+    <%= form.text_area :directors, id: :movie_directors %>
+  </div>
+
+  <div class="field">
+    <%= form.label :producers %>
+    <%= form.text_area :producers, id: :movie_producers %>
+  </div>
+
+  <div class="field">
+    <%= form.label :composers %>
+    <%= form.text_area :composers, id: :movie_composers %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genres %>
+    <%= form.text_area :genres, id: :movie_genres %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

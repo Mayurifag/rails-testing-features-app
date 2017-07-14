@@ -1,0 +1,20 @@
+<div class='col-sm-6 col-lg-4'>
+  <div class="card">
+    <%= link_to movie do %>
+      <div class="card-topper" style='background-image: url(<%= movie.poster_image_url %>);'></div>
+    <% end %>
+
+    <div class="card-block">
+      <h4 class="card-title"><%= link_to movie.title, movie %></h4>
+
+      <p class='premiere_world'> Мировая премьера: <%=movie.premiere_world %></p>
+      <p class="card-text"> <i><%= movie.slogan %></i></p>
+
+      <%= link_to movie do %>
+        <p class="btn btn-info btn-sm" role="button">Подробнее</p>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+<!--TODO: redo links etc; rewrite code  -->

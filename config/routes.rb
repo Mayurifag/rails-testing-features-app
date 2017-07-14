@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  resources :mori_cinema_todays
+  resources :movies
+  get 'about' => 'pages#about', as: :about
+  get 'contact' => 'pages#contact', as: :contact
   devise_for :users
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'movies#index'
 end

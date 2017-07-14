@@ -1,0 +1,2 @@
+class MoriCinemaToday < ApplicationRecord
+end

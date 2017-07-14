@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Test app for myself and visitors. It's better not to use it in your projects.
 
-Things you may want to cover:
+Заполненные фильмы показываются по убыванию, в зависимости от даты мировой премьеры.
+Реализован парсинг расписания кинотеатра «Mori cinema» в г. Сыктывкаре (https://mori-cinema.ru/cinema_detail/4768_mori_sinema/schedule.php)
 
-* Ruby version
+# TODO:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Friendly id
+* smth called design in modern times (bootstrap improvements, other frameworks possibly)
+* stylesheets refactor
+* validations
+* SQL guarding (?)
+* new/delete/edit
+* devise + cancancan // sorcery // active admin
+* change favicon
+* rewrite parse_cinema.rake
+* refactor routes.rb
+* russian locale
+* fully controllers refactoring
+* smth w/ database.yml and configs
+* static pages (about, contact, etc)
+* smart listing gem?
+* rescues add

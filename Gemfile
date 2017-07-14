@@ -13,10 +13,9 @@ gem 'rails', '~> 5.1.2'
 
 gem 'kinopoisk_parser', '~> 2.2.3'
 gem 'pg'
-gem 'bootstrap-sass'
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'devise'
-gem 'devise-bootstrapped'
-gem 'devise-i18n'
+gem 'popper_js', '~> 1.9.9'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -59,6 +58,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Use sqlite3 as the database for Active Record
   #gem 'sqlite3'
+  gem "better_errors"
+  gem "binding_of_caller"
+
 end
 
 group :production do
