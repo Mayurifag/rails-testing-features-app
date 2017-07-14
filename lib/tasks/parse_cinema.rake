@@ -15,6 +15,7 @@ namespace :parse_cinema do
     schedule.search('tr td').each{|f|
       f = f.text.strip.gsub(/\t/, '').gsub(/[\r\n]/, ' ') #двойной gsub?!?
       unless (f[0] =~ /\d/).present?
+        puts "Фильм '#{f}' будет добавлен в БД."
         MoriCinemaToday.create!({
           title: "#{f}"
           })
