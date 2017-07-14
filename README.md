@@ -3,7 +3,7 @@
 Test app for myself and visitors. It's better not to use it in your projects.
 
 Заполненные фильмы показываются по убыванию, в зависимости от даты мировой премьеры.
-Реализован парсинг расписания кинотеатра «Mori cinema» в г. Сыктывкаре (https://mori-cinema.ru/cinema_detail/4768_mori_sinema/schedule.php)
+Частично реализован парсинг расписания кинотеатра «Mori cinema» в г. Сыктывкаре (https://mori-cinema.ru/cinema_detail/4768_mori_sinema/schedule.php) при помощи парсинга кинопоиска.
 
 # TODO:
 
