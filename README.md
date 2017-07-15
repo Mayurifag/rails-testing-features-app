@@ -9,6 +9,8 @@ Test app for myself and visitors. It's better not to use it in your projects.
 
 - [ ] Mori cinema 2D, 3D, timings, view, controllers, etc
 - [ ] Friendly id
+- [ ] simple_form
+- [ ] paperclip+multipart in new movies for uploading pictures
 - [ ] smth called design in modern times (bootstrap improvements, other frameworks possibly)
 - [ ] stylesheets refactor
 - [ ] validations
