@@ -1,47 +1,50 @@
 <% provide(:page_title, @movie.title) %>
 <% provide(:movie_active, 'active') %>
 
-  <!--
-<div class="row">
-  <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-    <h1><%= @movie.title %></h1>
-    <p class='premiere_world'> Мировая премьера: <%= @movie.premiere_world %></p>
-    <p>Описание: <%= @movie.description %></p>
+<div class="container">
+  <h1 class="title">
+    <b><%= @movie.title %></b>
+  </h1>
+  <div class="row">
+    <div class="col">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Страны:
+          <%= @movie.countries%></li>
+        <li class="list-group-item">Бюджет:
+          <%= @movie.budget%></li>
+        <li class="list-group-item">Cборы в РФ:
+          <%= @movie.box_office_ru%></li>
+        <li class="list-group-item">Мировая премьера:
+          <%= @movie.premiere_world%></li>
+        <li class="list-group-item">Премьера в РФ:
+          <%= @movie.premiere_ru%></li>
+        <li class="list-group-item">Длительность:
+          <%= @movie.duration%></li>
+        <li class="list-group-item">
+          <div align="justify">Описание:
+          <%= @movie.description%></div></li>
+        <li class="list-group-item">Жанры:
+          <%= @movie.genres%></li>
+        <li class="list-group-item">Режиссеры:
+          <%= @movie.directors%></li>
+        <li class="list-group-item">Продюсеры:
+          <%= @movie.producers%></li>
+        <li class="list-group-item">Композиторы:
+          <%= @movie.composers%></li>
+      </ul>
+    </div>
+    <div class="col col-md-auto">
+      <img src="<%= @movie.poster_image_url%>"></img>
+      <p><%= @movie.slogan %></p>
+      <h6>IMDB: <%= @movie.imdb_rating %> | Kinopoisk: <%= @movie.rating %> | Another dumb rating: 14.88</h6>
+    </div>
+
+  </div>
+  <div class="card-block">
+      <%= link_to 'Назад', movies_path, class: "btn btn-outline-secondary" %>
+      <%= link_to 'Изменить', edit_movie_path, class: "btn btn-outline-info" %>
+      <%= link_to 'Удалить', movie_path(@movie), method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-outline-danger"  %>
   </div>
 </div>
-  -->
-  <img src="<%= @movie.poster_image_url%>"></img>
-  <div class="card" style="width: 20rem;">
-  <div class="card-block">
-    <h1 class="card-title align="center"><b><%= @movie.title %></b></h1>
-    <h6 class="card-text align="center">Рейтинг: imdb(<%= @movie.imdb_rating%>) || kinopoisk(<%= @movie.rating%>)</h6>
-
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cлоган: <i><%= @movie.slogan %></i></li>
-    <li class="list-group-item">Страны: <%= @movie.countries%></li>
-    <li class="list-group-item">Бюджет: <%= @movie.budget%></li>
-    <li class="list-group-item">Cборы в РФ: <%= @movie.box_office_ru%></li>
-    <li class="list-group-item">Мировая премьера: <%= @movie.premiere_world%></li>
-    <li class="list-group-item">Премьера в РФ: <%= @movie.premiere_ru%></li>
-    <li class="list-group-item">Длительность: <%= @movie.duration%></li>
-    <li class="list-group-item">Описание: <%= @movie.description%></li>
-    <li class="list-group-item">Жанры: <%= @movie.genres%></li>
-    <li class="list-group-item">Режиссеры: <%= @movie.directors%></li>
-    <li class="list-group-item">Продюсеры: <%= @movie.producers%></li>
-    <li class="list-group-item">Композиторы: <%= @movie.composers%></li>
-  </ul>
-  <div class="card-block">
-    <button type="button" class="btn  btn-outline-info">
-      <%=link_to 'Назад', movies_path %>
-    </button>
-    <button type="button" class="btn  btn-outline-info">
-      <%=link_to 'Изменить', edit_movie_path %>
-    </button>
-    <button type="button" class="btn  btn-outline-danger">
-      <%= link_to 'Удалить', movie_path(@movie), method: :delete, data: { confirm: 'Are you sure?' }  %>
-    </button>
-
-  </div>
 
 </div>

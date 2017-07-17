@@ -6,12 +6,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
 
 
-gem 'kinopoisk_parser', '~> 2.2.3'
+gem 'kinopoisk_parser'
 gem 'pg'
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'devise'
@@ -57,10 +56,11 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Use sqlite3 as the database for Active Record
-  #gem 'sqlite3'
-  gem "better_errors"
-  gem "binding_of_caller"
-
+  # gem 'sqlite3'
+  gem "better_errors", require: false
+  gem "binding_of_caller", require: false
+  gem 'guard', require: false
+  gem 'guard-livereload', '~> 2.5', require: false
 end
 
 group :production do

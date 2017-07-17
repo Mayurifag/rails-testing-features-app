@@ -24,10 +24,10 @@ namespace :kinopoisk do
         composers:        "#{movie.composers.join(", ").to_s}",
         genres:           "#{movie.genres.join(", ").to_s}",
         poster_image_url: "#{movie.poster}"
-        })
-        random = rand(15.2..32.1) #test this_.
-        puts "Фильм '#{movie.title}' добавлен. Будет добавлена случайная задержка, равная #{random.round 3} cекунд, но кинопоиск все равно заблокирует доступ капчей."
-        sleep random
+      })
+      #random = rand(15.2..32.1) #test this_.
+      puts "Фильм '#{movie.title}' добавлен."
+      # sleep random
     }
   end
 end

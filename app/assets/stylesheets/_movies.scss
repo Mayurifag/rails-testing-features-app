@@ -1,119 +1,84 @@
 .movies.index {
   .card {
-    border: none;
-    border-radius: 0;
+    border: 0;
     height: 400px;
     margin-bottom: 20px;
     background-color: white;
+
     .card-topper {
       height: 200px;
       width: 100%;
       background-size: cover;
       background-position: center;
     }
+
     .card-block {
-      padding: 10px;
+      padding: 8px;
+
       .card-title {
-        font-size: 1.3rem;
-        margin-bottom: 0;
+        font-size: 1.4rem;
+        margin-bottom: 5;
+        // title
         a {
           color: black;
           text-decoration: none;
+          font-weight: bold;
         }
       }
-      .tags {
-        margin-bottom: 0;
-        a {
-          font-family: 'Montserrat', sans-serif;
-          font-size: 12px;
-        }
-      }
-      .world-premiere {
-        font-size: 0.8rem;
-        color: #787878;
-        font-weight: 300;
-        margin-top: 0.3rem;
-        margin-bottom: 0.3rem;
-      }
+      // slogan
       .card-text {
         font-size: 0.9rem;
         color: black;
       }
-
     }
   }
 }
 
-.movies.edit, .movies.new {
-  .card {
-    .card-block {
-      background-color: #f7f7f9;
-    }
-    .card-title {
-      margin-bottom: 0;
-      font-size: 18px;
-      align: center;
-    }
-    .list-group-item {
-      padding: 10px;
-      border-left: 0;
-      border-right: 0;
-      input[type='text'], textarea {
-        font-size: 14px;
-        background-color: #f7f7f9;
-      }
-      textarea {
-        height: 100px;
-      }
-      &:last-child {
-        background-color: #f7f7f9;
-      }
-    }
+.movies.show{
+  .title {
+    margin-bottom: 30px;
+  }
+  p {
+    margin-top: 5px;
+    text-align: center;
+    font-style: italic;
+  }
+  h6 {
+    font-size: 0.7rem;
   }
 }
-
-.movies.show {
-  .card-title {
-    align: center;
-  }
-  .card-text {
-    align: center;
-  }
-  .author-bio {
-    background-color: white;
-    padding: 15px 45px;
-    margin: 30px 0;
-    img {
-      border-radius: 50%;
-    }
-    img, h4 {
-      margin-bottom: 10px;
-    }
-    h4 {
-      font-weight: bold;
-      font-size: 22px;
-    }
-    h6 {
-      font-weight: 300;
-      font-size: 16px
-    }
-  }
-}
-
+// .movies.show {
+//   .card {
+//     border: 0;
+//     margin-bottom: 20px;
+//     background-color: white;
+//   }
+//
+//   .card-block {
+//     padding: 18px;
+//
+//     .card-title {
+//       font-size: 3.5rem;
+//       margin-bottom: 5;
+//       // title
+//       a {
+//         color: black;
+//         text-decoration: none;
+//         font-weight: bold;
+//       }
+//     }
+//   }
+// }
 @media screen and (min-width: 34em) {
   .movies.index .card {
     height: 440px;
   }
 }
-
-/* Medium. Above 48em (768px) */
 @media screen and (min-width: 48em) {
   .movies.index .card {
     height: 420px;
   }
 }
-
-/* Extra large. Above 75em (1200px) */
 @media screen and (min-width: 75em) {
   .movies.index .card {
     height: 415px;

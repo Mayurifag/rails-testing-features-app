@@ -14,12 +14,12 @@ namespace :parse_cinema do
     times3d, times2d = '', ''
     movie_title = nil
 
-    schedule = doc.css('table.tbl_timetable')[0].css('tr td').children # 0 = today but im actually not sure
+    schedule = doc.css('table.tbl_timetable')[0].css('tr td').children # 0 = today but im actually not sure now
     # File.open('/tmp/parsed_schedule', 'w') {|f| f.write schedule } # see what you got
     schedule.each do |parsed_string|
       next if parsed_string.blank?
       parsed_string = parsed_string.text.to_s
-      # rewrite into defs
+      # TODO: rewrite into defs
       if parsed_string == '3D'
         threed = true
         next
@@ -29,7 +29,7 @@ namespace :parse_cinema do
         next
       end
       if parsed_string =~ /^[0-2]\d{1}:[0-5]\d{1}$/ # 00:00 - 23:59
-        # rewrite into defs
+        # TODO: rewrite into defs
         if twod == true
           times2d = "#{times2d}#{parsed_string} "
           next

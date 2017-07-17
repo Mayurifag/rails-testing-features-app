@@ -1,97 +1,97 @@
 <%= form_with(model: movie, local: true) do |form| %>
   <% if movie.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
-
+    <div class="alert alert-danger">
+      <h5><%= t('common.errors') %></h5>
       <ul>
-      <% movie.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+          <% @movie.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :movie_title %>
+  <div class="form-group">
+    <%= form.label :title, "Название" %>
+    <%= form.text_field :title, id: :movie_title, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :poster_image_url %>
-    <%= form.text_field :poster_image_url, id: :movie_poster_image_url %>
+  <div class="form-group">
+    <%= form.label :poster_image_url, "URL на постер" %>
+    <%= form.text_field :poster_image_url, id: :movie_poster_image_url, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :slogan %>
-    <%= form.text_area :slogan, id: :movie_slogan %>
+  <div class="form-group">
+    <%= form.label :slogan, "Слоган" %>
+    <%= form.text_area :slogan, id: :movie_slogan, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :imdb_rating %>
-    <%= form.text_field :imdb_rating, id: :movie_imdb_rating %>
+  <div class="form-group">
+    <%= form.label :imdb_rating, "Рейтинг на Imdb" %>
+    <%= form.text_field :imdb_rating, id: :movie_imdb_rating, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :rating %>
-    <%= form.text_field :rating, id: :movie_rating %>
+  <div class="form-group">
+    <%= form.label :rating, "Рейтинг на Кинопоиске" %>
+    <%= form.text_field :rating, id: :movie_rating, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :countries %>
-    <%= form.text_field :countries, id: :movie_countries %>
+  <div class="form-group">
+    <%= form.label :countries, "Страны" %>
+    <%= form.text_field :countries, id: :movie_countries, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :budget %>
-    <%= form.text_area :budget, id: :movie_budget %>
+  <div class="form-group">
+    <%= form.label :budget, "Бюджет" %>
+    <%= form.text_area :budget, id: :movie_budget, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :box_office_ru %>
-    <%= form.text_area :box_office_ru, id: :movie_box_office_ru %>
+  <div class="form-group">
+    <%= form.label :box_office_ru, "Сборы в РФ" %>
+    <%= form.text_area :box_office_ru, id: :movie_box_office_ru, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :premiere_world %>
-    <%= form.date_select :premiere_world, id: :movie_premiere_world %>
+  <div class="form-group">
+    <%= form.label :premiere_world, "Мировая премьера" %>
+    <%= form.date_select :premiere_world, id: :movie_premiere_world, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :premiere_ru %>
-    <%= form.date_select :premiere_ru, id: :movie_premiere_ru %>
+  <div class="form-group">
+    <%= form.label :premiere_ru, "Премьера в РФ" %>
+    <%= form.date_select :premiere_ru, id: :movie_premiere_ru, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :duration %>
-    <%= form.text_field :duration, id: :movie_duration %>
+  <div class="form-group">
+    <%= form.label :duration, "Продолжительность" %>
+    <%= form.text_field :duration, id: :movie_duration, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :movie_description %>
+  <div class="form-group">
+    <%= form.label :description, "Описание" %>
+    <%= form.text_area :description, id: :movie_description, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :directors %>
-    <%= form.text_area :directors, id: :movie_directors %>
+  <div class="form-group">
+    <%= form.label :directors, "Режиссёры" %>
+    <%= form.text_area :directors, id: :movie_directors, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :producers %>
-    <%= form.text_area :producers, id: :movie_producers %>
+  <div class="form-group">
+    <%= form.label :producers, "Продюсеры" %>
+    <%= form.text_area :producers, id: :movie_producers, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :composers %>
-    <%= form.text_area :composers, id: :movie_composers %>
+  <div class="form-group">
+    <%= form.label :composers, "Композиторы" %>
+    <%= form.text_area :composers, id: :movie_composers, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :genres %>
-    <%= form.text_area :genres, id: :movie_genres %>
+  <div class="form-group">
+    <%= form.label :genres, "Жанры" %>
+    <%= form.text_area :genres, id: :movie_genres, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Сохранить запись", class: 'btn btn-outline-primary' %>
+    <%= link_to 'Все фильмы', movies_path, class: "btn btn-outline-secondary" %>
   </div>
 <% end %>
