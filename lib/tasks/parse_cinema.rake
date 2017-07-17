@@ -54,10 +54,12 @@ end
 
 def fill_database (db, title, times2d, times3d)
   puts "Добавление фильма #{title} в БД."
+  # puts "2D: #{times2d}"
+  # puts "3D: #{times3d} \n ==="
   db.create!({
     title: "#{title}",
-    two_d: "#{times2d}",
-    three_d: "#{times3d}"
+    # two_d: "#{times2d}",
+    # three_d: "#{times3d}"
   })
 end
 

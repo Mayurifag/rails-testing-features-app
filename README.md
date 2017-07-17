@@ -12,7 +12,7 @@ Test app for myself and visitors. It's better not to use it in your projects.
 - [ ] Friendly id
 - [ ] simple_form
 - [ ] paperclip+multipart in new movies for uploading pictures
-- [ ] smth called design in modern times (bootstrap improvements, other frameworks possibly)
+- [ ] smth called design in modern times (bootstrap improvements, other frameworks possibly) || «new movie» page
 - [x] stylesheets refactor
 - [ ] validations
 - [ ] SQL guarding (?)

@@ -15,6 +15,7 @@ gem 'pg'
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'devise'
 gem 'popper_js', '~> 1.9.9'
+gem 'seed_dump'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
